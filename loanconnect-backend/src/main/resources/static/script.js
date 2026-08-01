@@ -329,14 +329,14 @@ document.addEventListener('DOMContentLoaded', () => {
     valid = setFieldError(loanPurpose, document.getElementById('loanPurposeError'),
       loanPurpose.value.trim().length < 5 ? 'Please describe the purpose of the loan' : '') && valid;
 
-    // Aadhaar & PAN uploads are required, salary slip is optional
-    const aadhaar = document.getElementById('aadhaar');
-    valid = setFieldError(aadhaar, document.getElementById('aadhaarError'),
-      !aadhaar.files.length ? 'Please upload your Aadhaar card' : '') && valid;
+    // // Aadhaar & PAN uploads are required, salary slip is optional
+    // const aadhaar = document.getElementById('aadhaar');
+    // valid = setFieldError(aadhaar, document.getElementById('aadhaarError'),
+    //   !aadhaar.files.length ? 'Please upload your Aadhaar card' : '') && valid;
 
-    const pan = document.getElementById('pan');
-    valid = setFieldError(pan, document.getElementById('panError'),
-      !pan.files.length ? 'Please upload your PAN card' : '') && valid;
+    // const pan = document.getElementById('pan');
+    // valid = setFieldError(pan, document.getElementById('panError'),
+    //   !pan.files.length ? 'Please upload your PAN card' : '') && valid;
 
     // Terms & conditions checkbox
     const terms = document.getElementById('terms');
@@ -387,14 +387,14 @@ document.addEventListener('DOMContentLoaded', () => {
       loanAmount: document.getElementById('loanAmount').value,
       loanTenure: document.getElementById('loanTenure').value,
       loanPurpose: document.getElementById('loanPurpose').value.trim(),
-      documents: {
-        aadhaar: document.getElementById('aadhaar').files[0]?.name || '',
-        pan: document.getElementById('pan').files[0]?.name || '',
-        salarySlip: document.getElementById('salarySlip').files[0]?.name || ''
-      }
+      // documents: {
+      //   aadhaar: document.getElementById('aadhaar').files[0]?.name || '',
+      //   pan: document.getElementById('pan').files[0]?.name || '',
+      //   salarySlip: document.getElementById('salarySlip').files[0]?.name || ''
+      // }
     };
 
-    fetch("http://localhost:8080/api/loan-applications", {
+    fetch("/api/loan-applications", {
       method: "POST",
       headers: {
           "Content-Type": "application/json"
