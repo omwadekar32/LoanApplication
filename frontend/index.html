@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoanConnect | Find the Right Loan for Your Needs</title>
+  <meta name="description" content="LoanConnect helps you apply for Personal, Home, Car, Business, Education and Gold Loans through a simple, secure application process.">
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Apply saved theme immediately, before first paint, to avoid a light-mode flash -->
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('loanconnect-theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="navbar__logo">
+        <span class="navbar__logo-icon"><i class="fa-solid fa-landmark"></i></span>
+        LoanConnect
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#home" class="nav-link active-link">Home</a>
+        <a href="#loans" class="nav-link">Loan Types</a>
+        <a href="#emi" class="nav-link">EMI Calculator</a>
+        <a href="#apply" class="nav-link">Apply Now</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+        <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--moon"></i>
+      </button>
+
+      <a href="#apply" class="btn btn--primary btn--nav">Apply Now</a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero__bg-shape"></div>
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <p class="eyebrow"><i class="fa-solid fa-circle-check"></i> Trusted by 25,000+ borrowers</p>
+        <h1 class="hero__title">Find the Right Loan for <span class="text-gradient">Your Needs</span></h1>
+        <p class="hero__subtitle">Apply for Personal, Home, Car, Business, Education and Gold Loans through a simple application process.</p>
+        <div class="hero__actions">
+          <a href="#apply" class="btn btn--primary btn--lg">
+            Apply Now <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#loans" class="btn btn--ghost btn--lg">Learn More</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="25000">0</span>
+            <span class="hero__stat-label">Loans Approved</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="98">0</span>
+            <span class="hero__stat-label">% Satisfaction</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num" data-count="24">0</span>
+            <span class="hero__stat-label">Hr Approval</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__art reveal" aria-hidden="true">
+        <div class="approval-card approval-card--main">
+          <div class="approval-card__top">
+            <span class="approval-card__badge"><i class="fa-solid fa-shield-halved"></i> Approved</span>
+            <i class="fa-solid fa-ellipsis"></i>
+          </div>
+          <p class="approval-card__label">Loan Amount</p>
+          <p class="approval-card__amount">₹12,50,000</p>
+          <div class="approval-card__bar"><span></span></div>
+          <p class="approval-card__foot">Home Loan · Tenure 20 yrs · Rate 8.4%</p>
+        </div>
+
+        <div class="approval-card approval-card--float approval-card--rate">
+          <i class="fa-solid fa-chart-line"></i>
+          <div>
+            <p class="approval-card__mini-title">Interest Rate</p>
+            <p class="approval-card__mini-value">8.4% p.a.</p>
+          </div>
+        </div>
+
+        <div class="approval-card approval-card--float approval-card--emi">
+          <i class="fa-solid fa-calculator"></i>
+          <div>
+            <p class="approval-card__mini-title">Monthly EMI</p>
+            <p class="approval-card__mini-value">₹10,845</p>
+          </div>
+        </div>
+
+        <div class="hero__ring"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BANK PARTNERS MARQUEE ===================== -->
+  <section class="partners">
+    <div class="container">
+      <p class="partners__label reveal">Trusted lending partners</p>
+    </div>
+    <div class="partners__track-wrap">
+      <div class="partners__track" id="partnersTrack">
+        <!-- Set A -->
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>State Bank of India</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>HDFC Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>ICICI Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Axis Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Kotak Mahindra Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Punjab National Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Bank of Baroda</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>IDFC FIRST Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Yes Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>IndusInd Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Canara Bank</span></div>
+        <div class="partner-logo"><i class="fa-solid fa-building-columns"></i><span>Union Bank of India</span></div>
+        <!-- Set B (duplicate for seamless infinite loop) -->
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>State Bank of India</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>HDFC Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>ICICI Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Axis Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Kotak Mahindra Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Punjab National Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Bank of Baroda</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>IDFC FIRST Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Yes Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>IndusInd Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Canara Bank</span></div>
+        <div class="partner-logo" aria-hidden="true"><i class="fa-solid fa-building-columns"></i><span>Union Bank of India</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOAN TYPES ===================== -->
+  <section class="section" id="loans">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Loan Types</p>
+        <h2 class="section__title">A loan for every milestone</h2>
+        <p class="section__subtitle">Compare rates and limits across six loan categories, then apply in minutes.</p>
+      </div>
+
+      <div class="loan-grid">
+
+        <!-- Personal Loan -->
+        <article class="loan-card reveal">
+          <div class="loan-card__icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Personal Loan</h3>
+          <p>Cover weddings, travel or emergencies with a collateral-free personal loan.</p>
+          <div class="loan-card__meta">
+            <div><span>Interest Rate</span><strong>10.5% p.a. onward</strong></div>
+            <div><span>Max Amount</span><strong>₹25,00,000</strong></div>
+          </div>
+          <a href="#apply" class="btn btn--outline btn--full loan-apply-btn" data-loan="Personal Loan">Apply Now</a>
+        </article>
+
+        <!-- Home Loan -->
+        <article class="loan-card reveal">
+          <div class="loan-card__icon"><i class="fa-solid fa-house"></i></div>
+          <h3>Home Loan</h3>
+          <p>Buy, build or renovate your dream home with long-tenure, low-rate financing.</p>
+          <div class="loan-card__meta">
+            <div><span>Interest Rate</span><strong>8.4% p.a. onward</strong></div>
+            <div><span>Max Amount</span><strong>₹5,00,00,000</strong></div>
+          </div>
+          <a href="#apply" class="btn btn--outline btn--full loan-apply-btn" data-loan="Home Loan">Apply Now</a>
+        </article>
+
+        <!-- Car Loan -->
+        <article class="loan-card reveal">
+          <div class="loan-card__icon"><i class="fa-solid fa-car"></i></div>
+          <h3>Car Loan</h3>
+          <p>Drive home a new or used car with fast approval and flexible tenure.</p>
+          <div class="loan-card__meta">
+            <div><span>Interest Rate</span><strong>9.2% p.a. onward</strong></div>
+            <div><span>Max Amount</span><strong>₹1,50,00,000</strong></div>
+          </div>
+          <a href="#apply" class="btn btn--outline btn--full loan-apply-btn" data-loan="Car Loan">Apply Now</a>
+        </article>
+
+        <!-- Business Loan -->
+        <article class="loan-card reveal">
+          <div class="loan-card__icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Business Loan</h3>
+          <p>Fund working capital, expansion or equipment with tailored business financing.</p>
+          <div class="loan-card__meta">
+            <div><span>Interest Rate</span><strong>11.0% p.a. onward</strong></div>
+            <div><span>Max Amount</span><strong>₹2,00,00,000</strong></div>
+          </div>
+          <a href="#apply" class="btn btn--outline btn--full loan-apply-btn" data-loan="Business Loan">Apply Now</a>
+        </article>
+
+        <!-- Education Loan -->
+        <article class="loan-card reveal">
+          <div class="loan-card__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Education Loan</h3>
+          <p>Finance tuition and living costs for studies in India or abroad.</p>
+          <div class="loan-card__meta">
+            <div><span>Interest Rate</span><strong>9.5% p.a. onward</strong></div>
+            <div><span>Max Amount</span><strong>₹75,00,000</strong></div>
+          </div>
+          <a href="#apply" class="btn btn--outline btn--full loan-apply-btn" data-loan="Education Loan">Apply Now</a>
+        </article>
+
+        <!-- Gold Loan -->
+        <article class="loan-card reveal">
+          <div class="loan-card__icon"><i class="fa-solid fa-coins"></i></div>
+          <h3>Gold Loan</h3>
+          <p>Unlock instant funds against your gold jewellery with minimal paperwork.</p>
+          <div class="loan-card__meta">
+            <div><span>Interest Rate</span><strong>7.8% p.a. onward</strong></div>
+            <div><span>Max Amount</span><strong>₹50,00,000</strong></div>
+          </div>
+          <a href="#apply" class="btn btn--outline btn--full loan-apply-btn" data-loan="Gold Loan">Apply Now</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="section section--tinted" id="why">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Why LoanConnect</p>
+        <h2 class="section__title">Built around your approval, not our paperwork</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Fast Approval</h3>
+          <p>Get an in-principle decision in as little as 24 hours with minimal documentation.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Trusted Loan Partners</h3>
+          <p>We work with 30+ leading banks and NBFCs to find you the best-fit lender.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="fa-solid fa-percent"></i></div>
+          <h3>Lowest Interest Rates</h3>
+          <p>Compare rates side-by-side and lock in the most competitive offer available.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-card__icon"><i class="fa-solid fa-lock"></i></div>
+          <h3>Secure Application</h3>
+          <p>Bank-grade encryption keeps your personal and financial data fully protected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EMI CALCULATOR ===================== -->
+  <section class="section" id="emi">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Plan Ahead</p>
+        <h2 class="section__title">EMI Calculator</h2>
+        <p class="section__subtitle">Estimate your monthly instalment before you apply.</p>
+      </div>
+
+      <div class="emi-panel reveal">
+        <form class="emi-form" id="emiForm" novalidate>
+          <div class="field">
+            <label for="emiAmount">Loan Amount (₹)</label>
+            <input type="number" id="emiAmount" placeholder="e.g. 1000000" min="1">
+            <span class="field__error" id="emiAmountError"></span>
+          </div>
+
+          <div class="field">
+            <label for="emiRate">Interest Rate (% per annum)</label>
+            <input type="number" id="emiRate" placeholder="e.g. 8.5" min="0.1" step="0.01">
+            <span class="field__error" id="emiRateError"></span>
+          </div>
+
+          <div class="field">
+            <label for="emiTenure">Loan Tenure (Years)</label>
+            <input type="number" id="emiTenure" placeholder="e.g. 5" min="1" step="1">
+            <span class="field__error" id="emiTenureError"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            <i class="fa-solid fa-calculator"></i> Calculate EMI
+          </button>
+        </form>
+
+        <div class="emi-result">
+          <div class="emi-result__ring">
+            <svg viewBox="0 0 120 120" class="emi-ring-svg">
+              <circle cx="60" cy="60" r="52" class="emi-ring-bg"></circle>
+              <circle cx="60" cy="60" r="52" class="emi-ring-fg" id="emiRingFg"></circle>
+            </svg>
+            <div class="emi-result__ring-text">
+              <span id="emiMonthly">₹0</span>
+              <small>per month</small>
+            </div>
+          </div>
+
+          <div class="emi-result__rows">
+            <div class="emi-result__row">
+              <span>Principal Amount</span>
+              <strong id="emiPrincipal">₹0</strong>
+            </div>
+            <div class="emi-result__row">
+              <span>Total Interest</span>
+              <strong id="emiInterest">₹0</strong>
+            </div>
+            <div class="emi-result__row emi-result__row--total">
+              <span>Total Amount Payable</span>
+              <strong id="emiTotal">₹0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== APPLICATION FORM ===================== -->
+  <section class="section section--tinted" id="apply">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">One Simple Form</p>
+        <h2 class="section__title">Apply for a Loan</h2>
+        <p class="section__subtitle">Fill in your details once — our team will match you with the best lender.</p>
+      </div>
+
+      <form class="apply-form reveal" id="applyForm" novalidate>
+
+        <!-- Personal Details -->
+        <div class="apply-form__group">
+          <h3 class="apply-form__group-title"><i class="fa-solid fa-id-card"></i> Personal Details</h3>
+          <div class="apply-form__grid">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+              <span class="field__error" id="fullNameError"></span>
+            </div>
+            <div class="field">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" maxlength="10">
+              <span class="field__error" id="mobileError"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+              <span class="field__error" id="emailError"></span>
+            </div>
+            <div class="field">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob">
+              <span class="field__error" id="dobError"></span>
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="Your city">
+              <span class="field__error" id="cityError"></span>
+            </div>
+            <div class="field">
+              <label for="loanType">Loan Type</label>
+              <select id="loanType" name="loanType">
+                <option value="">Select loan type</option>
+                <option value="Personal Loan">Personal Loan</option>
+                <option value="Home Loan">Home Loan</option>
+                <option value="Car Loan">Car Loan</option>
+                <option value="Business Loan">Business Loan</option>
+                <option value="Education Loan">Education Loan</option>
+                <option value="Gold Loan">Gold Loan</option>
+              </select>
+              <span class="field__error" id="loanTypeError"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Employment Details -->
+        <div class="apply-form__group">
+          <h3 class="apply-form__group-title"><i class="fa-solid fa-building"></i> Employment Details</h3>
+          <div class="apply-form__grid">
+            <div class="field">
+              <label for="employmentType">Employment Type</label>
+              <select id="employmentType" name="employmentType">
+                <option value="">Select employment type</option>
+                <option value="Salaried">Salaried</option>
+                <option value="Self Employed">Self Employed</option>
+              </select>
+              <span class="field__error" id="employmentTypeError"></span>
+            </div>
+            <div class="field">
+              <label for="companyName">Company / Business Name</label>
+              <input type="text" id="companyName" name="companyName" placeholder="Employer or business name">
+              <span class="field__error" id="companyNameError"></span>
+            </div>
+            <div class="field">
+              <label for="monthlyIncome">Monthly Income (₹)</label>
+              <input type="number" id="monthlyIncome" name="monthlyIncome" placeholder="e.g. 45000" min="1">
+              <span class="field__error" id="monthlyIncomeError"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loan Details -->
+        <div class="apply-form__group">
+          <h3 class="apply-form__group-title"><i class="fa-solid fa-sack-dollar"></i> Loan Details</h3>
+          <div class="apply-form__grid">
+            <div class="field">
+              <label for="loanAmount">Required Loan Amount (₹)</label>
+              <input type="number" id="loanAmount" name="loanAmount" placeholder="e.g. 500000" min="1">
+              <span class="field__error" id="loanAmountError"></span>
+            </div>
+            <div class="field">
+              <label for="loanTenure">Loan Tenure (Years)</label>
+              <input type="number" id="loanTenure" name="loanTenure" placeholder="e.g. 5" min="1">
+              <span class="field__error" id="loanTenureError"></span>
+            </div>
+            <div class="field field--full">
+              <label for="loanPurpose">Purpose of Loan</label>
+              <textarea id="loanPurpose" name="loanPurpose" rows="3" placeholder="Briefly describe what the loan will be used for"></textarea>
+              <span class="field__error" id="loanPurposeError"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Document Upload
+        <div class="apply-form__group">
+          <h3 class="apply-form__group-title"><i class="fa-solid fa-paperclip"></i> Document Upload</h3>
+          <div class="apply-form__grid">
+            <div class="field">
+              <label for="aadhaar">Aadhaar Card</label>
+              <input type="file" id="aadhaar" name="aadhaar" accept=".pdf,.jpg,.jpeg,.png">
+              <span class="field__error" id="aadhaarError"></span>
+            </div>
+            <div class="field">
+              <label for="pan">PAN Card</label>
+              <input type="file" id="pan" name="pan" accept=".pdf,.jpg,.jpeg,.png">
+              <span class="field__error" id="panError"></span>
+            </div>
+            <div class="field">
+              <label for="salarySlip">Salary Slip <small>(Optional)</small></label>
+              <input type="file" id="salarySlip" name="salarySlip" accept=".pdf,.jpg,.jpeg,.png">
+              <span class="field__error" id="salarySlipError"></span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Terms -->
+        <label class="checkbox">
+          <input type="checkbox" id="terms" name="terms">
+          <span>I agree to the <a href="#">Terms &amp; Conditions</a></span>
+        </label>
+        <span class="field__error" id="termsError"></span>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--full">Submit Application</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Testimonials</p>
+        <h2 class="section__title">What our borrowers say</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <article class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p>"My home loan was approved in two days flat. The team explained every step and got me a rate I didn't think was possible."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">RS</div>
+            <div>
+              <strong>Ravi Sharma</strong>
+              <span>Home Loan Customer</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p>"I needed working capital fast for my shop. LoanConnect matched me with a lender the same week — smooth process throughout."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">AP</div>
+            <div>
+              <strong>Anita Patel</strong>
+              <span>Business Loan Customer</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="testimonial-card__stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p>"The EMI calculator helped me plan my budget before applying. Everything from application to disbursal felt transparent."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">MK</div>
+            <div>
+              <strong>Manoj Kumar</strong>
+              <span>Education Loan Customer</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section section--tinted" id="faq">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section__title">Frequently asked questions</h2>
+      </div>
+
+      <div class="accordion reveal">
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            How long does approval take?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>Most applications receive an in-principle approval within 24–48 hours, provided all documents are submitted correctly. Final disbursal timing depends on the lender you're matched with.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            What documents are required?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>You'll typically need your Aadhaar Card and PAN Card for identity and address verification. A recent salary slip is optional but can speed up approval for salaried applicants.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            Can I apply for multiple loans?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>Yes, you can submit separate applications for different loan types. Keep in mind that each application may affect your credit score, so we recommend applying only for loans you genuinely need.</p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            What is the minimum salary requirement?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion__panel">
+            <p>Minimum income requirements vary by loan type and lender, but most personal and car loans require a monthly income of at least ₹15,000. Business and home loans may have different criteria.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Get In Touch</p>
+        <h2 class="section__title">We're here to help</h2>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <div class="contact-info__item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Address</strong>
+              <p>4th Floor, Prestige Towers, MG Road, Bengaluru, Karnataka 560001</p>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>support@loanconnect.example</p>
+            </div>
+          </div>
+
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Google Map Placeholder</span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" placeholder="Your name">
+            <span class="field__error" id="contactNameError"></span>
+          </div>
+          <div class="field">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" placeholder="you@example.com">
+            <span class="field__error" id="contactEmailError"></span>
+          </div>
+          <div class="field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" rows="5" placeholder="How can we help?"></textarea>
+            <span class="field__error" id="contactMessageError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <a href="#home" class="navbar__logo footer__logo">
+          <span class="navbar__logo-icon"><i class="fa-solid fa-landmark"></i></span>
+          LoanConnect
+        </a>
+        <p>Your trusted partner for Personal, Home, Car, Business, Education and Gold Loans — simple, fast, secure.</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#loans">Loan Types</a>
+        <a href="#emi">EMI Calculator</a>
+        <a href="#apply">Apply Now</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Loan Types</h4>
+        <a href="#loans">Personal Loan</a>
+        <a href="#loans">Home Loan</a>
+        <a href="#loans">Car Loan</a>
+        <a href="#loans">Business Loan</a>
+        <a href="#loans">Education Loan</a>
+        <a href="#loans">Gold Loan</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-location-dot"></i> MG Road, Bengaluru 560001</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope"></i> support@loanconnect.example</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span id="year"></span> LoanConnect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== SCROLL TO TOP ===================== -->
+  <button id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ===================== SUCCESS MODAL ===================== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal__icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3>Application Submitted!</h3>
+      <p id="modalMessage">Your loan application has been submitted successfully.</p>
+      <button class="btn btn--primary" id="modalOkBtn">Done</button>
+    </div>
+  </div>
+
+  <!-- Toast for contact form -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
