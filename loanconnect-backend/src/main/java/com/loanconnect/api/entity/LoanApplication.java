@@ -18,7 +18,7 @@ public class LoanApplication {
     private Long id;
 
     /** Human-friendly reference shown to the applicant, e.g. APP-20260801-0001 */
-    @Column(name = "application_ref", unique = true, nullable = false, length = 40)
+    @Column(name = "application_ref", unique = true, length = 40)
     private String applicationRef;
 
     // ---------- Personal details ----------

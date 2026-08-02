@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Applications Data</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f5f5f5;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: #1f4e79;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h2>Loan Applications</h2>
+
+<table>
+
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Application Ref</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>City</th>
+    <th>Loan Type</th>
+    <th>Employment</th>
+    <th>Income</th>
+    <th>Loan Amount</th>
+    <th>Status</th>
+    <th>Submitted Date</th>
+</tr>
+</thead>
+
+
+<tbody id="loanData">
+
+</tbody>
+
+
+</table>
+
+
+<script>
+
+fetch('/data')
+.then(response => response.json())
+.then(data => {
+
+    let table = "";
+
+    data.forEach(application => {
+
+        table += `
+        <tr>
+            <td>${application.id}</td>
+            <td>${application.applicationRef}</td>
+            <td>${application.fullName}</td>
+            <td>${application.mobile}</td>
+            <td>${application.email}</td>
+            <td>${application.city}</td>
+            <td>${application.loanType}</td>
+            <td>${application.employmentType}</td>
+            <td>${application.monthlyIncome}</td>
+            <td>${application.loanAmount}</td>
+            <td>${application.status}</td>
+            <td>${application.submittedAt}</td>
+        </tr>
+        `;
+
+    });
+
+
+    document.getElementById("loanData").innerHTML = table;
+
+})
+.catch(error => {
+    console.log(error);
+    alert("Unable to load data");
+});
+
+</script>
+
+
+</body>
+</html>

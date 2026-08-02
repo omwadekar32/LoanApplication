@@ -79,3 +79,4 @@ public class LoanApplicationController {
         return ResponseEntity.noContent().build();
     }
 }
+

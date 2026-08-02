@@ -10,27 +10,20 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class LoanApplicationService {
 
     private final LoanApplicationRepository repository;
 
-    // Simple in-memory counter to make same-day reference numbers readable
-    // (e.g. APP-20260801-0001). Fine for a single instance; for multiple
-    // instances/replicas, generate the ref from a DB sequence instead.
-    private final AtomicInteger dailyCounter = new AtomicInteger(1);
-
     public LoanApplicationService(LoanApplicationRepository repository) {
         this.repository = repository;
     }
 
-    /** Maps the incoming request to an entity, saves it, and returns a response DTO. */
     public LoanApplicationResponse submitApplication(LoanApplicationRequest request) {
+
         LoanApplication entity = new LoanApplication();
 
-        entity.setApplicationRef(generateApplicationRef());
         entity.setFullName(request.getFullName());
         entity.setMobile(request.getMobile());
         entity.setEmail(request.getEmail());
@@ -49,7 +42,18 @@ public class LoanApplicationService {
         entity.setTermsAccepted(request.isTermsAccepted());
         entity.setStatus("SUBMITTED");
 
+        // First save to get the auto-generated ID
         LoanApplication saved = repository.save(entity);
+
+        // Generate unique application reference
+        String date = LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
+        saved.setApplicationRef(
+                String.format("APP-%s-%04d", date, saved.getId())
+        );
+
+        // Save again with the reference
+        saved = repository.save(saved);
+
         return LoanApplicationResponse.fromEntity(saved);
     }
 
@@ -59,12 +63,14 @@ public class LoanApplicationService {
 
     public LoanApplication getApplicationById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Loan application not found with id: " + id));
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Loan application not found with id: " + id));
     }
 
     public LoanApplication getApplicationByRef(String applicationRef) {
         return repository.findByApplicationRef(applicationRef)
-                .orElseThrow(() -> new ResourceNotFoundException("Loan application not found with ref: " + applicationRef));
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Loan application not found with ref: " + applicationRef));
     }
 
     public void deleteApplication(Long id) {
@@ -72,11 +78,5 @@ public class LoanApplicationService {
             throw new ResourceNotFoundException("Loan application not found with id: " + id);
         }
         repository.deleteById(id);
-    }
-
-    private String generateApplicationRef() {
-        String datePart = LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE); // e.g. 20260801
-        int seq = dailyCounter.getAndIncrement();
-        return String.format("APP-%s-%04d", datePart, seq);
     }
 }
