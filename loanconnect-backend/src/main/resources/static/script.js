@@ -387,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loanAmount: document.getElementById('loanAmount').value,
       loanTenure: document.getElementById('loanTenure').value,
       loanPurpose: document.getElementById('loanPurpose').value.trim(),
+      termsAccepted: document.getElementById("terms").checked
       // documents: {
       //   aadhaar: document.getElementById('aadhaar').files[0]?.name || '',
       //   pan: document.getElementById('pan').files[0]?.name || '',
