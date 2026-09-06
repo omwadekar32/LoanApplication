@@ -1,4 +1,4 @@
-name: Keep LoanApp Alive
+name: Keep Render App Alive
 
 on:
 schedule:
@@ -8,7 +8,6 @@ workflow_dispatch:
 jobs:
 keep-alive:
 runs-on: ubuntu-latest
-
 steps:
-  - name: Ping Render App
-    run: curl -f --max-time 30 https://loanapplication-ak2y.onrender.com/health
+- name: Ping Render App
+run: curl -f --max-time 30 https://loanapplication-ak2y.onrender.com/health
