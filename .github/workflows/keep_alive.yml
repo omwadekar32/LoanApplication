@@ -2,13 +2,18 @@ name: Keep App Alive
 
 on:
   schedule:
-    - cron: "2-59/5 * * * *"
+    - cron: "3-59/10 * * * *"
   workflow_dispatch:
 
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
+
     steps:
       - name: Ping Render App
         run: |
-          curl -f --max-time 30 https://loanapplication-ak2y.onrender.com/health
+          echo "Pinging  app..."
+          curl --fail --silent --show-error \
+            --max-time 60 \
+            https://loanapplication-ak2y.onrender.com/health
+          echo "app is responding."
